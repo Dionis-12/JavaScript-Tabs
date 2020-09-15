@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="icon" href="image/icon.ico">
+	<title> JavaScript Tabs </title>
+</head>
+
+<body>
+	<!-- Container General -->
+	<div class="container">
+		<!-- Block of Images -->
+		<div class="icon">
+			<div class="iconBx active" data-id="content1">
+				<img src="image/img1.jpg">
+			</div>
+			<div class="iconBx" data-id="content2">
+				<img src="image/img2.jpg">
+			</div>
+			<div class="iconBx" data-id="content3">
+				<img src="image/img3.jpg">
+			</div>
+			<div class="iconBx" data-id="content4">
+				<img src="image/img4.jpg">
+			</div>
+		</div>
+
+		<!-- Content One -->
+		<div class="content">
+			<div class="contentBx active" id="content1">
+				<div>
+					<div class="text">
+						<h2> Google Text </h2>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing
+							elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua. Ut enim ad minim veniam, quis
+							nostrud exercitation ullamco laboris nisi ut aliquip
+							ex ea commodo consequat. Duis aute irure dolor in
+							reprehenderit in voluptate velit esse cillum dolore
+							eu fugiat nulla pariatur. Excepteur sint occaeca
+							cupidatat non proident, sunt in culpa qui officia
+							deserunt mollit anim id est laborum.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Content Two -->
+			<div class="contentBx" id="content2">
+				<div>
+					<div class="text">
+						<h2> Facebook Text </h2>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing
+							elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua. Ut enim ad minim veniam, quis
+							nostrud exercitation ullamco laboris nisi ut aliquip
+							ex ea commodo consequat. Duis aute irure dolor in
+							reprehenderit in voluptate velit esse cillum dolore
+							eu fugiat nulla pariatur. Excepteur sint occaeca
+							cupidatat non proident, sunt in culpa qui officia
+							deserunt mollit anim id est laborum.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Content Three -->
+			<div class="contentBx" id="content3">
+				<div>
+					<div class="text">
+						<h2> Youtube Text </h2>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing
+							elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua. Ut enim ad minim veniam, quis
+							nostrud exercitation ullamco laboris nisi ut aliquip
+							ex ea commodo consequat. Duis aute irure dolor in
+							reprehenderit in voluptate velit esse cillum dolore
+							eu fugiat nulla pariatur. Excepteur sint occaeca
+							cupidatat non proident, sunt in culpa qui officia
+							deserunt mollit anim id est laborum.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Content Four -->
+			<div class="contentBx" id="content4">
+				<div>
+					<div class="text">
+						<h2> Yahoo Text </h2>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipisicing
+							elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua. Ut enim ad minim veniam, quis
+							nostrud exercitation ullamco laboris nisi ut aliquip
+							ex ea commodo consequat. Duis aute irure dolor in
+							reprehenderit in voluptate velit esse cillum dolore
+							eu fugiat nulla pariatur. Excepteur sint occaeca
+							cupidatat non proident, sunt in culpa qui officia
+							deserunt mollit anim id est laborum.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Scrip for Tabs -->
+	<script type="text/javascript">
+		var iconBx = document.querySelectorAll('.iconBx');
+		var contentBx =  document.querySelectorAll('.contentBx');
+
+		for (var i=0; i<iconBx.length; i++) {
+			iconBx[i].addEventListener('mouseover', function() {
+				for (var i=0; i<contentBx.length; i++) {
+					contentBx[i].className = 'contentBx';
+				}
+				document.getElementById(this.dataset.id).className = 'contentBx active';
+				for (var i=0; i<iconBx.length; i++) {
+					iconBx[i].className = 'iconBx';
+				}
+				this.className = 'iconBx active';
+			})
+		}
+	</script>
+</body>
+</html>
